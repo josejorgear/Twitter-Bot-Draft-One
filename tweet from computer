@@ -1,0 +1,26 @@
+import tweepy
+
+#add personal tokens from twitter API
+CONSUMER_KEY = ""
+CONSUMER_SECRET = ""
+ACCESS_TOKEN = ""
+ACCESS_TOKEN_SECRET = ""
+
+# Aunthenticate to Twitter
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+
+auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+
+# Create API Object
+
+api = tweepy.API(auth)
+
+# Create a tweet w/ input
+
+print("Enter what you would like to tweet:")
+
+x = input()
+
+api.update_status(x)
+print("You Tweeted: " + x)
